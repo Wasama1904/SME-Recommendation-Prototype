@@ -3,7 +3,7 @@
 
 A browser-based prototype of a three-tier personalised content recommendation platform for SME South Africa. This project simulates the complete entrepreneur-facing experience for both desktop website and mobile app, plus the shared Node.js/Express backend, CMS, advertiser, and admin workflows — all running 100% in the browser with Local Storage as the mock database.
 
-> **Status:** Design-Stage Prototype | No backend required | Desktop & Mobile Responsive
+> **Status:** Design-Stage Prototype | Desktop & Mobile Responsive
 
 ---
 
@@ -11,16 +11,14 @@ A browser-based prototype of a three-tier personalised content recommendation pl
 
 | Section | Preview |
 | :--- | :--- |
-| **Desktop - Homepage** | ![Desktop Homepage](C:\Users\makol\Downloads\SCHOOL\2026 SEMESTER 2\XISD6329\SME-Recommendation-Prototype\SME-Recommendation-Prototype\Screenshot 2026-09-04 152821.png) |
-| **Desktop - Article Detail** | ![Desktop Article](./assets/screenshots/desktop-article.png) |
-| **Mobile App - Home Feed** | ![Mobile Home](./assets/screenshots/mobile-home.png) |
-| **Mobile App - Article Detail** | ![Mobile Article](./assets/screenshots/mobile-article.png) |
-| **Mobile App - Profile & Settings** | ![Mobile Profile](./assets/screenshots/mobile-profile.png) |
-| **User Portal - Preferences** | ![Preferences](./assets/screenshots/user-portal.png) |
-| **CMS Editorial Queue** | ![CMS Queue](./assets/screenshots/cms-queue.png) |
-| **Admin Analytics Dashboard** | ![Analytics](./assets/screenshots/admin-analytics.png) |
-
-*Create a folder `assets/screenshots/` and drop your images there. The table above will auto-render them on GitHub.*
+| **Desktop - Homepage** |<img width="984" height="583" alt="Screenshot 2026-09-04 154312" src="https://github.com/user-attachments/assets/11254bea-6964-4c4d-a96b-50499e9ac68b" />|
+| **Desktop - Article Detail** |<img width="1854" height="925" alt="Screenshot 2026-09-04 153140" src="https://github.com/user-attachments/assets/79db51ff-901b-434b-bfc8-3da27d3106e9" />|
+| **Mobile App - Home Feed** |<img width="523" height="852" alt="Screenshot 2026-09-04 154155" src="https://github.com/user-attachments/assets/a46b24af-803a-4d5f-b107-71b248d42442" />|
+| **Mobile App - Article Detail** |<img width="522" height="597" alt="Screenshot 2026-09-04 154220" src="https://github.com/user-attachments/assets/b37143e9-5f04-4f51-96f7-0f345eadc0fb" />|
+| **Mobile App - Profile & Settings** |<img width="530" height="522" alt="Screenshot 2026-09-04 154230" src="https://github.com/user-attachments/assets/b3ab0dce-8520-4696-9729-b7a6c1854ae8" />|
+| **User Portal - Preferences** |<img width="1599" height="726" alt="Screenshot 2026-09-04 153157" src="https://github.com/user-attachments/assets/b5fbfebc-a14e-4ec2-8276-b027247daf90" />|
+| **CMS Editorial Queue** |<img width="1572" height="639" alt="Screenshot 2026-09-04 153102" src="https://github.com/user-attachments/assets/7df49bd9-c1f2-4fba-abf3-d73ae5370f5b" />|
+| **Admin Analytics Dashboard** |<img width="661" height="371" alt="Screenshot 2026-09-04 15301944" src="https://github.com/user-attachments/assets/5d7ca944-54f6-43d6-adc1-7760e1e41e80" />|
 
 ---
 
@@ -126,7 +124,7 @@ The prototype uses `window.localStorage` to simulate a database.
 
 ### 👤 Author
 
-**Module:** XISD5319  
+**Module:** XISD6329       
 **Project:** SME South Africa Personalised Recommendation Platform  
 **Type:** Design-Stage Prototype Presentation
 
@@ -134,4 +132,4 @@ The prototype uses `window.localStorage` to simulate a database.
 
 ### 📄 License
 
-For academic / demonstration purposes — XISD5319.
+For academic / demonstration purposes — XISD6329
