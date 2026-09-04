@@ -1,0 +1,3 @@
+Final product updated from C:\Users\mtavo\OneDrive\Documents\New project on 2026-09-02.
+Open index.html in a modern browser to run the finished static app.
+Note: ST10457568.DMP was not recopied because Windows previously reported: The cloud file provider is not running. Start/sync OneDrive and copy that file manually if the database dump is required.

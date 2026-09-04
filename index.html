@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SME South Africa | Personalised Recommendations</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23276747'/%3E%3Ctext x='32' y='39' font-family='Arial' font-size='18' font-weight='700' text-anchor='middle' fill='white'%3ESME%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#dashboard" aria-label="SME South Africa home">
+          <span class="brand-mark">SME</span>
+          <span>
+            <strong>SME South Africa</strong>
+            <small>Recommendation Platform</small>
+          </span>
+        </a>
+
+        <nav class="main-nav" aria-label="Primary navigation">
+          <a class="active" href="#dashboard">Dashboard</a>
+          <a href="#sitemaps">Sitemaps</a>
+          <a href="#website-design">Website UI</a>
+          <a href="#mobile-app">Mobile App</a>
+          <a href="#recommendations">Recommendations</a>
+          <a href="#library">Content Library</a>
+          <a href="#saved">Saved</a>
+          <a href="#cms">CMS</a>
+          <a href="#analytics">Analytics</a>
+        </nav>
+
+        <section class="account-card">
+          <p class="eyebrow">Current user</p>
+          <h2 id="profileName">Tino M.</h2>
+          <p id="profileSummary">Growing business owner focused on funding, marketing, and tax.</p>
+          <div class="stacked-actions">
+            <button id="openProfile" class="secondary-button" type="button">Edit profile</button>
+            <button id="openAuth" class="secondary-button" type="button">Register / login</button>
+          </div>
+        </section>
+
+        <section class="system-card">
+          <p class="eyebrow">System Health</p>
+          <div class="health-row"><span>REST API</span><strong>Online</strong></div>
+          <div class="health-row"><span>MySQL</span><strong>Synced</strong></div>
+          <div class="health-row"><span>MongoDB logs</span><strong>Active</strong></div>
+          <button id="resetDemo" class="secondary-button full-width" type="button">Reset demo data</button>
+        </section>
+      </aside>
+
+      <main>
+        <header class="hero" id="dashboard">
+          <div>
+            <p class="eyebrow">Design stage prototype</p>
+            <h1>Personalised business resources for South African entrepreneurs</h1>
+            <p>
+              Website and mobile app designs for SME South Africa, sharing one Node.js/Express API
+              while adapting search, article discovery, profiles, tracking, and recommendations to
+              each platform.
+            </p>
+          </div>
+          <form class="search-panel" id="searchForm">
+            <label for="searchInput">Search content</label>
+            <div class="control-row">
+              <input id="searchInput" type="search" placeholder="Try funding, POPIA, tax, CRM...">
+              <button type="submit">Search</button>
+            </div>
+            <div class="control-row compact">
+              <select id="categoryFilter" aria-label="Filter articles by category">
+                <option value="All">All categories</option>
+              </select>
+              <select id="stageFilter" aria-label="Filter by business stage">
+                <option value="All">All stages</option>
+                <option value="Starting">Starting</option>
+                <option value="Growing">Growing</option>
+                <option value="Scaling">Scaling</option>
+              </select>
+            </div>
+          </form>
+        </header>
+
+        <section class="quick-stats" aria-label="Platform metrics">
+          <article>
+            <span>Shared backend</span>
+            <strong>REST</strong>
+          </article>
+          <article>
+            <span>Recommendation slots</span>
+            <strong id="recommendationCount">0</strong>
+          </article>
+          <article>
+            <span>Average match score</span>
+            <strong id="averageScore">0%</strong>
+          </article>
+          <article>
+            <span>Newsletter leads tracked</span>
+            <strong id="newsletterLeads">248</strong>
+          </article>
+        </section>
+
+        <section class="panel design-board" id="sitemaps">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Information Architecture</p>
+              <h2>Finalised website and app sitemaps</h2>
+            </div>
+            <span class="status-pill">Design ready</span>
+          </div>
+          <div class="sitemap-grid">
+            <article class="sitemap-column">
+              <h3>Website</h3>
+              <ol class="flow-list">
+                <li>Home dashboard with search, filters, recommended articles, trending resources, and newsletter prompt.</li>
+                <li>Content library with category, stage, topic, and keyword filtering.</li>
+                <li>Article detail pages with save, rate, newsletter, related resources, and reading-time tracking.</li>
+                <li>Profile and preferences for business stage, sector, preferred categories, notification frequency, and saved items.</li>
+                <li>Admin CMS, sponsored content, and analytics areas for platform staff.</li>
+              </ol>
+            </article>
+            <article class="sitemap-column">
+              <h3>Mobile App</h3>
+              <ol class="flow-list">
+                <li>Home feed with personalised cards, quick filters, bookmarks, and recent searches.</li>
+                <li>Search tab for keyword entry, saved filters, categories, and recommendation refresh.</li>
+                <li>Article detail screen with image, summary, reading progress, save, share, and rating actions.</li>
+                <li>Saved tab for bookmarked articles, guides, tools, and offline-ready resources.</li>
+                <li>Profile/settings tab for login, preferences, newsletter, privacy, and notification controls.</li>
+              </ol>
+            </article>
+            <article class="sitemap-column">
+              <h3>Shared Services</h3>
+              <ol class="flow-list">
+                <li>React website and mobile app clients call the same secured HTTPS REST API.</li>
+                <li>Node.js/Express handles authentication, content, recommendations, email, analytics, and CMS requests.</li>
+                <li>MySQL stores users, sessions, articles, categories, preferences, subscriptions, ads, and recommendations.</li>
+                <li>MongoDB stores searches, clicks, reading time, scroll depth, ratings, and other behaviour events.</li>
+                <li>Recommendation scoring combines profile data, search history, saved content, ratings, and trending metadata.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <section class="website-showcase" id="website-design">
+          <section class="panel browser-frame">
+            <div class="browser-top">
+              <span></span>
+              <span></span>
+              <span></span>
+              <strong>sme.co.za/recommendations</strong>
+            </div>
+            <div class="desktop-home-preview">
+              <div>
+                <p class="eyebrow">Desktop Homepage</p>
+                <h2>Find the right guide before the next business decision</h2>
+                <p class="card-copy">A fast-loading homepage gives entrepreneurs search, filters, recommended resources, saved items, and newsletter signup without forcing them through admin screens.</p>
+                <div class="mock-search">
+                  <span>Search funding, tax, POPIA, marketing...</span>
+                  <button type="button">Search</button>
+                </div>
+                <div class="topic-row" aria-label="Homepage topic filters">
+                  <span>Funding</span>
+                  <span>Tax</span>
+                  <span>Marketing</span>
+                  <span>Compliance</span>
+                </div>
+              </div>
+              <aside class="recommendation-rail">
+                <h3>Recommended for you</h3>
+                <p>92% match - Marketing channels that work on a tight budget</p>
+                <p>88% match - Choosing digital tools for a lean team</p>
+                <p>81% match - Small business tax deadlines and records</p>
+              </aside>
+            </div>
+          </section>
+
+          <aside class="panel article-wireframe">
+            <p class="eyebrow">Website Article Detail</p>
+            <img class="detail-image" src="assets/funding.png" alt="Funding guide feature visual">
+            <h2>Funding options for South African startups</h2>
+            <p>Detail pages prioritise readable article content, related recommendations, save/rate actions, newsletter subscription, and tracking for clicks, read time, and engagement quality.</p>
+            <div class="article-detail-map">
+              <span>Hero image</span>
+              <span>Title and metadata</span>
+              <span>Article body</span>
+              <span>Related resources</span>
+              <span>Save and rating actions</span>
+            </div>
+          </aside>
+        </section>
+
+        <section class="panel mobile-showcase" id="mobile-app">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Mobile App Design</p>
+              <h2>Home feed, article detail, profile/settings, and bottom tabs</h2>
+            </div>
+            <span class="status-pill">iOS and Android</span>
+          </div>
+          <div class="phone-grid">
+            <article class="phone-shell active" data-mobile-screen="home">
+              <div class="phone-status">9:41</div>
+              <div class="phone-content">
+                <p class="eyebrow">Home</p>
+                <h3>Good morning, Tino</h3>
+                <div class="phone-search">Search SME resources</div>
+                <div class="phone-filter-row"><span>Funding</span><span>Marketing</span><span>Tax</span></div>
+                <div class="phone-card">
+                  <img src="assets/marketing.png" alt="Marketing resource thumbnail">
+                  <strong>Marketing channels that work on a tight budget</strong>
+                  <small>92% match - 7 min read</small>
+                </div>
+                <div class="phone-card">
+                  <img src="assets/technology.png" alt="Technology resource thumbnail">
+                  <strong>Choosing digital tools for a lean team</strong>
+                  <small>88% match - 6 min read</small>
+                </div>
+              </div>
+              <nav class="bottom-tabs" aria-label="Mobile home bottom tabs">
+                <button type="button" class="active" data-screen="home">Home</button>
+                <button type="button" data-screen="search">Search</button>
+                <button type="button" data-screen="saved">Saved</button>
+                <button type="button" data-screen="profile">Profile</button>
+              </nav>
+            </article>
+
+            <article class="phone-shell" data-mobile-screen="article">
+              <div class="phone-status">9:41</div>
+              <div class="phone-content">
+                <p class="eyebrow">Article</p>
+                <img class="phone-hero-img" src="assets/compliance.png" alt="Compliance article visual">
+                <h3>POPIA compliance checklist for customer data</h3>
+                <small>Compliance - Scaling - 8 min read</small>
+                <p>Reading progress, save, rating, and related-resource events are captured for recommendation tuning.</p>
+                <div class="phone-actions">
+                  <button type="button">Save</button>
+                  <button type="button" class="secondary-button">Rate</button>
+                </div>
+              </div>
+              <nav class="bottom-tabs" aria-label="Mobile article bottom tabs">
+                <button type="button" data-screen="home">Home</button>
+                <button type="button" data-screen="search">Search</button>
+                <button type="button" data-screen="saved">Saved</button>
+                <button type="button" data-screen="profile">Profile</button>
+              </nav>
+            </article>
+
+            <article class="phone-shell" data-mobile-screen="profile">
+              <div class="phone-status">9:41</div>
+              <div class="phone-content">
+                <p class="eyebrow">Profile</p>
+                <h3>Moko Digital Studio</h3>
+                <div class="setting-row"><span>Logged in</span><strong>Tino M.</strong></div>
+                <div class="setting-row"><span>Stage</span><strong>Growing</strong></div>
+                <div class="setting-row"><span>Newsletter</span><strong>Weekly</strong></div>
+                <div class="setting-row"><span>Tracking</span><strong>Enabled</strong></div>
+                <div class="topic-row compact-tags"><span>Funding</span><span>Marketing</span><span>Tax</span></div>
+              </div>
+              <nav class="bottom-tabs" aria-label="Mobile profile bottom tabs">
+                <button type="button" data-screen="home">Home</button>
+                <button type="button" data-screen="search">Search</button>
+                <button type="button" data-screen="saved">Saved</button>
+                <button type="button" class="active" data-screen="profile">Profile</button>
+              </nav>
+            </article>
+          </div>
+        </section>
+
+        <section class="product-grid">
+          <section class="panel preferences-panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Preference Setup</p>
+                <h2>Business profile</h2>
+              </div>
+              <span id="selectedCount" class="status-pill">0 selected</span>
+            </div>
+
+            <label class="field-label" for="businessName">Business name</label>
+            <input id="businessName" type="text" value="Moko Digital Studio">
+
+            <label class="field-label" for="sectorInput">Sector</label>
+            <select id="sectorInput">
+              <option>Digital services</option>
+              <option>Retail</option>
+              <option>Manufacturing</option>
+              <option>Food and hospitality</option>
+              <option>Professional services</option>
+            </select>
+
+            <label class="range-label" for="stageRange">
+              Business stage
+              <span id="stageLabel">Growing</span>
+            </label>
+            <input id="stageRange" type="range" min="0" max="2" step="1" value="1">
+            <div class="stage-scale" aria-hidden="true">
+              <span>Starting</span>
+              <span>Growing</span>
+              <span>Scaling</span>
+            </div>
+
+            <div class="chips" id="preferenceChips"></div>
+          </section>
+
+          <section class="panel recommendations-panel" id="recommendations">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Recommendation Engine</p>
+                <h2>Personalised feed</h2>
+              </div>
+              <button id="refreshRecommendations" type="button">Refresh</button>
+            </div>
+            <div class="feed" id="recommendationFeed"></div>
+          </section>
+        </section>
+
+        <section class="content-layout" id="library">
+          <section class="panel article-panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Content Services</p>
+                <h2>Article library</h2>
+              </div>
+              <span id="resultCount" class="status-pill">0 results</span>
+            </div>
+            <div class="article-grid" id="articleGrid"></div>
+          </section>
+
+          <aside class="panel detail-panel">
+            <p class="eyebrow">Article Details</p>
+            <div id="articleDetail"></div>
+            <form class="newsletter" id="newsletterForm">
+              <label for="emailInput">Newsletter subscription</label>
+              <div class="control-row">
+                <input id="emailInput" type="email" placeholder="name@example.com" required>
+                <button type="submit">Subscribe</button>
+              </div>
+              <p id="newsletterStatus" role="status"></p>
+            </form>
+          </aside>
+        </section>
+
+        <section class="panel interaction-plan" id="interaction-plan">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">User Interactions and QA</p>
+              <h2>Events, security, responsiveness, and test coverage</h2>
+            </div>
+            <span class="status-pill">Before development</span>
+          </div>
+          <div class="interaction-grid">
+            <article>
+              <h3>Tracked Events</h3>
+              <p>Searches, filter changes, article opens, bookmarks, ratings, newsletter subscriptions, reading time, scroll depth, and preference updates.</p>
+            </article>
+            <article>
+              <h3>Security and Performance</h3>
+              <p>HTTPS-only API traffic, JWT/session protection, input validation, password hashing, least-privilege database access, lazy-loaded assets, responsive images, and cache-friendly content.</p>
+            </article>
+            <article>
+              <h3>Testing Plan</h3>
+              <p>Website testing across Chrome, Edge, Firefox, Safari, desktop widths, tablet widths, and mobile breakpoints; app testing across representative iOS and Android devices.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel" id="saved">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">User Portal</p>
+              <h2>Saved resources</h2>
+            </div>
+            <button id="clearSaved" class="secondary-button" type="button">Clear saved</button>
+          </div>
+          <div class="saved-grid" id="savedGrid"></div>
+        </section>
+
+        <section class="admin-grid">
+          <section class="panel" id="cms">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Content Management</p>
+                <h2>Editorial queue</h2>
+              </div>
+              <button id="approveTop" type="button">Approve top item</button>
+            </div>
+            <form class="cms-form" id="cmsForm">
+              <input id="cmsTitle" type="text" placeholder="Article title" required>
+              <select id="cmsCategory" required></select>
+              <textarea id="cmsSummary" placeholder="Short article summary" required></textarea>
+              <button type="submit">Submit article</button>
+            </form>
+            <div class="queue" id="editorialQueue"></div>
+          </section>
+
+          <section class="panel" id="sponsored">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Advertiser Portal</p>
+                <h2>Sponsored content</h2>
+              </div>
+              <span id="activeCampaigns" class="status-pill">0 active</span>
+            </div>
+            <form class="campaign-form" id="campaignForm">
+              <input id="campaignName" type="text" placeholder="Campaign name" required>
+              <select id="campaignCategory" required></select>
+              <input id="campaignBudget" type="number" min="250" step="50" value="1250" aria-label="Campaign budget in rand">
+              <button type="submit">Create campaign</button>
+            </form>
+            <div class="campaign-list" id="campaignList"></div>
+          </section>
+
+          <section class="panel" id="analytics">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Analytics</p>
+                <h2>Engagement dashboard</h2>
+              </div>
+              <button id="exportReport" class="secondary-button" type="button">Export JSON</button>
+            </div>
+            <div class="chart" id="analyticsChart"></div>
+            <div class="event-log" id="eventLog" aria-live="polite"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="profileDialog">
+      <form method="dialog" class="dialog-card" id="profileForm">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Account Access</p>
+            <h2>Edit demo user</h2>
+          </div>
+          <button class="icon-button" id="closeProfile" value="cancel" type="button" aria-label="Close profile editor">x</button>
+        </div>
+        <label class="field-label" for="profileNameInput">Display name</label>
+        <input id="profileNameInput" type="text" value="Tino M.">
+        <label class="field-label" for="profileEmailInput">Email</label>
+        <input id="profileEmailInput" type="email" value="tino@sme-demo.co.za">
+        <div class="dialog-actions">
+          <button class="secondary-button" value="cancel" type="button" id="cancelProfile">Cancel</button>
+          <button value="default" type="submit">Save profile</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="authDialog">
+      <form method="dialog" class="dialog-card" id="authForm">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">User Access</p>
+            <h2>Register or login</h2>
+          </div>
+          <button class="icon-button" id="closeAuth" value="cancel" type="button" aria-label="Close access form">x</button>
+        </div>
+        <label class="field-label" for="authNameInput">Full name</label>
+        <input id="authNameInput" type="text" value="TinoTenda Marumahoko">
+        <label class="field-label" for="authEmailInput">Email</label>
+        <input id="authEmailInput" type="email" value="tino@sme-demo.co.za" required>
+        <label class="field-label" for="authPasswordInput">Password</label>
+        <input id="authPasswordInput" type="password" value="demo-password" minlength="8" required>
+        <p class="form-note">Demo authentication stores only the profile session in local browser state.</p>
+        <div class="dialog-actions">
+          <button class="secondary-button" value="cancel" type="button" id="cancelAuth">Cancel</button>
+          <button value="default" type="submit">Save session</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
