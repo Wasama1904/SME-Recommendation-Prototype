@@ -9,11 +9,9 @@ A browser-based prototype of a three-tier personalised content recommendation pl
 
 ### ✨ Live Preview
 
-> **Add your screenshots here**
-
 | Section | Preview |
 | :--- | :--- |
-| **Desktop - Homepage** | ![Desktop Homepage](./assets/screenshots/desktop-home.png) |
+| **Desktop - Homepage** | ![Desktop Homepage](C:\Users\makol\Downloads\SCHOOL\2026 SEMESTER 2\XISD6329\SME-Recommendation-Prototype\SME-Recommendation-Prototype\Screenshot 2026-09-04 152821.png) |
 | **Desktop - Article Detail** | ![Desktop Article](./assets/screenshots/desktop-article.png) |
 | **Mobile App - Home Feed** | ![Mobile Home](./assets/screenshots/mobile-home.png) |
 | **Mobile App - Article Detail** | ![Mobile Article](./assets/screenshots/mobile-article.png) |
